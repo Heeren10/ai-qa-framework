@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Alignment Module | AI QA Framework</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>AI QA Framework</h1>
+            <p>Phase 1: Logic Alignment (Business Analyst Agent)</p>
+        </header>
+
+        <main>
+            <section class="input-section glass-panel">
+                <h2>Analysis Input</h2>
+                <form id="analyze-form">
+                    <div class="form-group">
+                        <label for="url">Target URL</label>
+                        <input type="text" id="url" name="url" placeholder="https://example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="brd">System Documentation (BRD)</label>
+                        <textarea id="brd" name="brd" rows="5"
+                            placeholder="Paste business requirements, notes, or documentation here..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" id="analyze-btn">Analyze Logic</button>
+                </form>
+            </section>
+
+            <section id="loading-section" class="hidden">
+                <div class="spinner"></div>
+                <p>Agent is meticulously analyzing the business logic...</p>
+            </section>
+
+            <section id="results-section" class="glass-panel hidden">
+                <h2>Business Analyst Report</h2>
+                <div class="report-block">
+                    <h3>🎯 System Purpose</h3>
+                    <p id="res-purpose"></p>
+                </div>
+
+                <div class="report-block">
+                    <h3>👥 User Personas</h3>
+                    <ul id="res-personas"></ul>
+                </div>
+
+                <div class="report-block">
+                    <h3>🛣️ Critical Business Paths</h3>
+                    <ul id="res-paths"></ul>
+                </div>
+
+                <div class="report-block">
+                    <h3>🤔 Assumed Logic</h3>
+                    <ul id="res-logic"></ul>
+                </div>
+
+                <div class="actions">
+                    <p class="verification-text">Does this align perfectly with your business logic?</p>
+                    <button id="approve-btn" class="btn-success">Approve & Move to Testing</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
